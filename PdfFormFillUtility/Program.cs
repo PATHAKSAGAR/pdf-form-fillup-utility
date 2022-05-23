@@ -9,36 +9,46 @@ namespace PdfFormFillUtility
     {
         static void Main(string[] args)
         {
-            var root = Environment.CurrentDirectory.Replace("\\bin\\Debug\\netcoreapp3.1", "");
-            var filePath = @$"{root}\leaveform.pdf";
-
-            var dataModel = new Model()
+            try
             {
-                FullName = "sagar Pathak",
-                FamilyName = "Sagar Pathak",
-                Language1 = "Off",
-                Language2 = "Off",
-                Language3 = "Off",
-                Language4 = "Off",
-                Language5 = "On",
-                FavColour = "Orange",
-                Address1 = "JB Nagar",
-                Address2 = "Chakala, Andheri East",
-                HouseNumber = "23 A",
-                City = "Akola",
-                PostalCode = "12345",
-                Country = "Denmark",
-                Gender = "Man",
-                Height = "120",
-                DrivingLicense = "On"
-            };
+                Console.WriteLine("Pdf is getting processed");
+                var root = Environment.CurrentDirectory.Replace("\\bin\\Debug\\netcoreapp3.1", "");
+                var filePath = @$"{root}\leaveform.pdf";
 
-            var data = PdfFormUtility<Model>.Generate(filePath, JsonConvert.SerializeObject(dataModel));
-            var outputFilePath = @$"{root}\leaveformoutput.pdf";
-            File.WriteAllBytes(outputFilePath, data);
+                var dataModel = new Model()
+                {
+                    FullName = "sagar Pathak",
+                    FamilyName = "Sagar Pathak",
+                    Language1 = "Off",
+                    Language2 = "Off",
+                    Language3 = "Off",
+                    Language4 = "Off",
+                    Language5 = "On",
+                    FavColour = "Orange",
+                    Address1 = "JB Nagar",
+                    Address2 = "Chakala, Andheri East",
+                    HouseNumber = "23 A",
+                    City = "Akola",
+                    PostalCode = "12345",
+                    Country = "Denmark",
+                    Gender = "Man",
+                    Height = "120",
+                    DrivingLicense = "On"
+                };
 
-            /* Another Way of Doing */
-            //var data = PdfFormUtility<Model>.Generate(filePath, dataModel);
+                var data = PdfFormUtility<Model>.Generate(filePath, JsonConvert.SerializeObject(dataModel));
+                var outputFilePath = @$"{root}\leaveformoutput.pdf";
+                File.WriteAllBytes(outputFilePath, data);
+
+                Console.WriteLine($"Pdf is processed & saved at {outputFilePath}");
+
+                /* Another Way of Doing */
+                //var data = PdfFormUtility<Model>.Generate(filePath, dataModel);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{"Pdf Processing Failed"} - {ex}");
+            }
         }
 
         public class Model
