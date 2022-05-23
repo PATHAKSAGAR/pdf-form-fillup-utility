@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PdfFormFillUtility.Utility;
+using System;
+using System.IO;
 
 namespace PdfFormFillUtility
 {
@@ -7,10 +9,12 @@ namespace PdfFormFillUtility
     {
         static void Main(string[] args)
         {
-            var filePath = @"C:/Sagar/Learnings/Conosle Programs/leaveform.pdf";
+            var root = Environment.CurrentDirectory.Replace("\\bin\\Debug\\netcoreapp3.1", "");
+            var filePath = @$"{root}\leaveform.pdf";
+
             var dataModel = new Model()
             {
-                FullName = "Shivaansh Pathak",
+                FullName = "sagar Pathak",
                 FamilyName = "Sagar Pathak",
                 Language1 = "Off",
                 Language2 = "Off",
@@ -30,8 +34,11 @@ namespace PdfFormFillUtility
             };
 
             var data = PdfFormUtility<Model>.Generate(filePath, JsonConvert.SerializeObject(dataModel));
+            var outputFilePath = @$"{root}\leaveformoutput.pdf";
+            File.WriteAllBytes(outputFilePath, data);
+
+            /* Another Way of Doing */
             //var data = PdfFormUtility<Model>.Generate(filePath, dataModel);
-            System.IO.File.WriteAllBytes("C:/Sagar/Learnings/Conosle Programs/hello.pdf", data);
         }
 
         public class Model
