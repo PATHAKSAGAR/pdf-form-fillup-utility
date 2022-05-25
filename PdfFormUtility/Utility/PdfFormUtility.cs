@@ -1,6 +1,8 @@
 ﻿using iText.Forms;
+using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
@@ -77,16 +79,43 @@ namespace PdfFormFillUtility.Utility
         private static void FillForm(PdfDocument pdfDoc, Dictionary<string, string> dictMapper)
         {
             var form = PdfAcroForm.GetAcroForm(pdfDoc, true);
-            foreach (var item in form.GetFormFields())
+            var formFields = form.GetFormFields();
+            var inValidFields = GetInValidField(formFields, dictMapper);
+            if (inValidFields?.Count == 0)
             {
-                item.Value.SetReadOnly(false);
-                if (dictMapper.TryGetValue(item.Key, out string value))
+                foreach (var item in formFields)
                 {
-                    item.Value.SetValue(value);
+                    item.Value.SetReadOnly(false);
+                    if (dictMapper.TryGetValue(item.Key, out string value))
+                    {
+                        if (!string.IsNullOrEmpty(value))
+                        {
+                            item.Value.SetValue(value);
+                        }
+                    }
+                    item.Value.SetReadOnly(true);
                 }
-                item.Value.SetReadOnly(true);
+            }
+            else
+            {
+                throw new Exception($"Please fill in data for: {string.Join(" ,", inValidFields)} ");
             }
         }
+
+        /// <summary>
+        /// Validate input data model
+        /// </summary>
+        /// <param name="formFields"></param>
+        /// <param name="inputDict"></param>
+        /// <returns></returns>
+        private static List<string> GetInValidField(IDictionary<string, PdfFormField> formFields, Dictionary<string, string> inputDict)
+        {
+            var reqFields = formFields.Where(x => x.Value.IsRequired()).Select(x => x.Key).ToList();
+            var invalidFields = inputDict.Where(x => reqFields.Contains(x.Key) && string.IsNullOrEmpty(x.Value)).Select(x => x.Key).ToList();
+            return invalidFields;
+
+        }
+
 
         public static object GetFeildsToMap(string filePath)
         {
