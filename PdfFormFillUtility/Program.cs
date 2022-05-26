@@ -14,18 +14,18 @@ namespace PdfFormFillUtility
                 var root = Environment.CurrentDirectory.Replace("\\bin\\Debug\\netcoreapp3.1", "");
                 var filePath = @$"{root}\leaveform.pdf";
 
-                Console.WriteLine("Executing Function-1 GetFeildsToMap() = To Get list of all feilds from given pdf");
-                var listOfFeilds = PdfFormUtility.GetFieldsToMap(filePath);
-                if (listOfFeilds?.Count > 0)
+                Console.WriteLine("\nExecuting GetFieldsToMap() function to Get list of all form fields in pdf..");
+                var listOfFields = PdfFormUtility.GetFieldsToMap(filePath);
+                if (listOfFields?.Count > 0)
                 {
-                    Console.WriteLine("Printing results..");
-                    foreach (var feild in listOfFeilds)
+                    Console.WriteLine("\nPrinting fields name..\n");
+                    foreach (var field in listOfFields)
                     {
-                        Console.WriteLine(feild);
+                        Console.WriteLine(field);
                     }
                 }
 
-                Console.WriteLine("Executing Function-2 GeneratePdf()");
+                Console.WriteLine("\nExecuting GeneratePdf() function to fill pdf form ..");
                 var data = PdfFormUtility.GeneratePdf(filePath, new Dictionary<string, string>
                 {
                       {"Given Name Text Box", "Sagar Pathak"},
@@ -49,11 +49,11 @@ namespace PdfFormFillUtility
 
                 var outputFilePath = @$"{root}\leaveformoutput.pdf";
                 File.WriteAllBytes(outputFilePath, data);
-                Console.WriteLine($"Pdf is processed & saved at {outputFilePath}");
+                Console.WriteLine($"\nPdf form is processed & saved at Pdf at {outputFilePath}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"{"Pdf Processing Failed"} - {ex}");
+                Console.WriteLine($"\n{"Pdf Processing Failed"} - {ex}");
             }
         }
     }

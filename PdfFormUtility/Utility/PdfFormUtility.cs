@@ -9,7 +9,7 @@ namespace PdfFormFillUtility.Utility
     public static class PdfFormUtility
     {
         /// <summary>
-        /// Return list of pdf form fields.
+        /// Returns a list of form fields that exist in the PDF
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
@@ -26,7 +26,7 @@ namespace PdfFormFillUtility.Utility
 
 
         /// <summary>
-        /// Return pdf bytes which can be used to create pdf.
+        /// Fill form in the PDF with input model and return the processed PDF byte array
         /// </summary>
         /// <param name="filePath"></param>
         /// <param name="dataModel"></param>
