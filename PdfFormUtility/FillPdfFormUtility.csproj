@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Sagar Pathak, Anjali Sharma</Authors>
+    <Company>PSAGAR89, anjali-sharma29</Company>
+    <Description>This package provides a utility for retrieving form fields and dynamically filling out PDF forms.</Description>
+    <PackageTags>FillPdf, FillForm, iText7, pdfutility, fillpdfform</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
