@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PdfFormFillUtility.Utility
+namespace PdfFormFillUpUtility.Utility
 {
-    public static class PdfFormUtility
+    public static class PdfFormFillUpService
     {
         /// <summary>
         /// Returns a list of form fields that exist in the PDF

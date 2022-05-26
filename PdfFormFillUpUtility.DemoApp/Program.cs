@@ -1,9 +1,9 @@
-﻿using PdfFormFillUtility.Utility;
+﻿using PdfFormFillUpUtility.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace PdfFormFillUtility
+namespace PdfFormFillUpUtility.DemoApp
 {
     public class Program
     {
@@ -15,7 +15,7 @@ namespace PdfFormFillUtility
                 var filePath = @$"{root}\leaveform.pdf";
 
                 Console.WriteLine("\nExecuting GetFieldsToMap() function to Get list of all form fields in pdf..");
-                var listOfFields = PdfFormUtility.GetFieldsToMap(filePath);
+                var listOfFields = PdfFormFillUpService.GetFieldsToMap(filePath);
                 if (listOfFields?.Count > 0)
                 {
                     Console.WriteLine("\nPrinting fields name..\n");
@@ -26,7 +26,7 @@ namespace PdfFormFillUtility
                 }
 
                 Console.WriteLine("\nExecuting GeneratePdf() function to fill pdf form ..");
-                var data = PdfFormUtility.GeneratePdf(filePath, new Dictionary<string, string>
+                var data = PdfFormFillUpService.GeneratePdf(filePath, new Dictionary<string, string>
                 {
                       {"Given Name Text Box", "Sagar Pathak"},
                       {"Family Name Text Box", "Ramkumar Pathak"},
