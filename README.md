@@ -6,7 +6,7 @@
 
 ### Installing Package
 
-Install-Package FillPdfFormUtility -Version 1.0.1
+Install-Package FillPdfFormUtility -Version 1.0.0
 
 ## Usage
 

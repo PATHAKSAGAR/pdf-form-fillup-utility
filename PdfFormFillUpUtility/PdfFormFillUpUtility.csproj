@@ -10,11 +10,11 @@
     <PackageTags>fillform, fillpdfform, iText7, formfillutility</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility/tree/main/PdfFormFillUtility</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility</RepositoryUrl>
     <RepositoryType>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.1</Version>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
