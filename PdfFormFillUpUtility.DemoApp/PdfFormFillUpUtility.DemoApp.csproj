@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PdfFormFillUpUtility\PdfFormFillUpUtility.csproj" />
     <ProjectReference Include="..\PdfFormUtility\FillPdfFormUtility.csproj" />
   </ItemGroup>
 

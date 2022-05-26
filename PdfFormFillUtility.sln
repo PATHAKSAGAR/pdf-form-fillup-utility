@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FillPdfFormUtilityDemoApp", "PdfFormFillUtility\FillPdfFormUtilityDemoApp.csproj", "{E1E52CA0-2599-4516-B314-D1CB9AB688F7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FillPdfFormUtility", "PdfFormUtility\FillPdfFormUtility.csproj", "{82B61080-9D09-4759-9535-3492772EC171}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15942FF3-8FC8-4B3A-A56D-6F14F70BD989}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfFormFillUpUtility.DemoApp", "PdfFormFillUpUtility.DemoApp\PdfFormFillUpUtility.DemoApp.csproj", "{0A69DDEB-446E-453C-8DA9-7AEA88D065A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfFormFillUpUtility", "PdfFormFillUpUtility\PdfFormFillUpUtility.csproj", "{C01D4B7D-9B66-4AA9-B789-BE046372B69E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,14 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1E52CA0-2599-4516-B314-D1CB9AB688F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1E52CA0-2599-4516-B314-D1CB9AB688F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1E52CA0-2599-4516-B314-D1CB9AB688F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1E52CA0-2599-4516-B314-D1CB9AB688F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82B61080-9D09-4759-9535-3492772EC171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82B61080-9D09-4759-9535-3492772EC171}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82B61080-9D09-4759-9535-3492772EC171}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82B61080-9D09-4759-9535-3492772EC171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A69DDEB-446E-453C-8DA9-7AEA88D065A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A69DDEB-446E-453C-8DA9-7AEA88D065A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A69DDEB-446E-453C-8DA9-7AEA88D065A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A69DDEB-446E-453C-8DA9-7AEA88D065A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C01D4B7D-9B66-4AA9-B789-BE046372B69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01D4B7D-9B66-4AA9-B789-BE046372B69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01D4B7D-9B66-4AA9-B789-BE046372B69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01D4B7D-9B66-4AA9-B789-BE046372B69E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
