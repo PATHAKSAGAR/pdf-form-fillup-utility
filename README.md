@@ -6,6 +6,8 @@
 
 ### Installing Package
 
+Install-Package FillPdfFormUtility -Version 1.0.1
+
 ## Usage
 
 ### Get list of form fields in a PDF
@@ -52,4 +54,4 @@ var result = PdfFormUtility.GeneratePdf(filePath, inputData);
 
 ### DemoConsoleApp
 
-This is a [console app ](..) for reference purpose where you can see how we can hookup fill form utility.
+This is a [console app ](https://github.com/PATHAKSAGAR/pdf-form-fillup-utility/blob/main/PdfFormFillUtility/Program.cs) for reference purpose where you can see how we can hookup fill form utility.

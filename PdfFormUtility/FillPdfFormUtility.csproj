@@ -3,10 +3,29 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <Authors>PSAGAR89, anjali-sharma29</Authors>
+    <Description>This package provides a utility for retrieving form fields and dynamically filling out PDF forms.</Description>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageIcon>download.png</PackageIcon>
+    <PackageTags>fillform, fillpdfform, iText7, formfillutility</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility/tree/main/PdfFormFillUtility</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility</RepositoryUrl>
+    <RepositoryType>https://github.com/PATHAKSAGAR/pdf-form-fillup-utility</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="itext7" Version="7.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Downloads\download.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
